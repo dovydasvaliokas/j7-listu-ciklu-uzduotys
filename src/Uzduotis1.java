@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Uzduotis1 {
     public static void main(String[] args) {
 
+
     }
 
     /**
@@ -25,5 +26,21 @@ public class Uzduotis1 {
             list.add(skait.nextInt());
         }
         return list;
+    }
+
+    /**
+     * Apsskaičiuoja kiek sąraše yra skaičių didesnių už tam tikrą nurodytą skaičių
+     * @param list sąrašas
+     * @param x nurodytas skaičius
+     * @return kiekį, kiek didesnsių už x
+     */
+    public static int kiekDidesniu(ArrayList<Integer> list, int x) {
+        int kiekis = 0;
+        for (Integer sk : list) {
+            if (sk > x) {
+                kiekis++;
+            }
+        }
+        return kiekis;
     }
 }
