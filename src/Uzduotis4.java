@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
@@ -25,5 +26,21 @@ public class Uzduotis4 {
             }
         }
         return kiekis;
+    }
+
+    /**
+     * Nuskaito listą iš konsolės
+     * @return listą
+     */
+    public static ArrayList<String> nuskaitytiLista() {
+        Scanner skait = new Scanner(System.in);
+        ArrayList<String> list = new ArrayList<>();
+        System.out.println("Įveskite kiek bus žodžių: ");
+        int n = skait.nextInt();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Įveskite " + i + "-ąjį žodį:");
+            list.add(skait.nextLine());
+        }
+        return list;
     }
 }
