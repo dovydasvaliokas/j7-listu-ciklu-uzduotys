@@ -9,7 +9,8 @@ import java.util.Scanner;
 public class Uzduotis6 {
     public static void main(String[] args) {
         ArrayList<Boolean> loginiai = nuskaitytiLista();
-        System.out.println("loginiai = " + loginiai);
+        String dvejatinisSk = dvejatainisSkaicius(loginiai);
+        System.out.println("dvejatinisSk = " + dvejatinisSk);
 
     }
 
@@ -27,6 +28,27 @@ public class Uzduotis6 {
             list.add(skait.nextBoolean());
         }
         return list;
+    }
+
+    /**
+     * Konvertuoja loginių kintamųjų listą į dvejatainį skaičių.
+     * Dvejatainį skaičių atvaizduoju kaip String kintamąjį, kadangi dvejatainiai gali būti labai ilgi skaičiai ir gana greitai gali išeiti už int ribų
+     * Taip pat, sumuodamas numerius į tekstą naudoju StringBuilder objektą vietoj String kintamojo. Tai nėra būtina, tačiau tiesiog parašius paprastai su += operatoriumi ir paprastu String - IntellIj Idea metė, jog geriau cikle daryti su StringBuilder
+     * Kiek atsimenu, tai naudojant += operatorių naujesnėse Javos versijose kompiliatoriuss automatiškai naudoja StringBuilder, tai jei jo nenaudosite - problemų neturėtų iškilti, tiesiog jei naudosite jį - papildomai "apsaugosite" programą.
+     * @param loginiai loginių kintamųjų sąrašas
+     * @return String pavidalu dvejatainis skaičius.
+     */
+    public static String dvejatainisSkaicius(ArrayList<Boolean> loginiai) {
+        StringBuilder skaicius = new StringBuilder();
+        for (Boolean loginis : loginiai) {
+            if (loginis) {
+                skaicius.append("1");
+            }
+            else {
+                skaicius.append("0");
+            }
+        }
+        return skaicius.toString();
     }
 
 }
