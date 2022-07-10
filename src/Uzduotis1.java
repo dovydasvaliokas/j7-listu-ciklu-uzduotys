@@ -8,7 +8,9 @@ import java.util.Scanner;
  */
 public class Uzduotis1 {
     public static void main(String[] args) {
-
+        ArrayList<Integer> skaiciai = nuskaitytiLista();
+        int kiekDid = kiekDidesniu(skaiciai, 10);
+        System.out.println("kiekDid = " + kiekDid);
 
     }
 
