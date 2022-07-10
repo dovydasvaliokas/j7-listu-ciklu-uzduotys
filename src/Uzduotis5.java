@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Uzduotis5 {
     public static void main(String[] args) {
         ArrayList<Integer> skaiciai = nuskaitytiLista();
+        rezultatoIsvedimas(skaiciai);
 
     }
 
@@ -103,4 +104,45 @@ public class Uzduotis5 {
         return lyginiuSuma(list) - nelyginiuSuma(list);
     }
 
+    /**
+     * Funkcija išveda rezultatą į konsolę priklaussomai nuo to kurių skaičių yra daugiau bei kokios jų sumos
+     * @param list sąrašas
+     */
+    public static void rezultatoIsvedimas(List<Integer> list) {
+        int arLygDaugiau = arLyginiuDaugiau(list);
+        int arLygSumaDaugiau = arLyginiuSumaDidesne(list);
+        if (arLygDaugiau > 0) {
+            if (arLygSumaDaugiau > 0) {
+                System.out.println("Lyginių kiekis bei suma didesnė");
+            }
+            else if (arLygSumaDaugiau < 0) {
+                System.out.println("Lyginių kiekis didesnis, bet suma mažesnė");
+            }
+            else {
+                System.out.println("Lyginių kiekis didesnis, o sumos vienodos");
+            }
+        }
+        else if (arLygDaugiau < 0) {
+            if (arLygSumaDaugiau > 0) {
+                System.out.println("Lyginių mažiau, bet jų suma yra didesnė");
+            }
+            else if (arLygSumaDaugiau < 0) {
+                System.out.println("Lyginių mažiau ir jų suma yra taip pat mažesnė");
+            }
+            else {
+                System.out.println("Lyginių yra mažiau, o jų sumos yra vienodos");
+            }
+        }
+        else {
+            if (arLygSumaDaugiau > 0) {
+                System.out.println("lyginių ir nelyginių kiekis vienodas, o suma yra didesnė lyginių");
+            }
+            else if (arLygSumaDaugiau < 0) {
+                System.out.println("lyginių ir nelyginių kiekis vienodas, o suma yra didesnė nelyginių");
+            }
+            else {
+                System.out.println("Tiek kiekiai, tiek sumos yra vienodos");
+            }
+        }
+    }
 }
