@@ -64,4 +64,33 @@ public class Uzduotis5 {
         return Integer.compare(kiekLyginiu(list), list.size() - kiekLyginiu(list));
     }
 
+    /**
+     * Randa lyginių skaičių sumą
+     * @param list sąrašas
+     * @return suma
+     */
+    public static int lyginiuSuma(List<Integer> list) {
+        int suma = 0;
+        for (Integer sk : list) {
+            if (arLyginis(sk)) {
+                suma += sk;
+            }
+        }
+        return suma;
+    }
+
+    /**
+     * Randa nelyginių skaičių sumą
+     * @param list sąrašas
+     * @return suma
+     */
+    public static int nelyginiuSuma(List<Integer> list) {
+        int suma = 0;
+        for (Integer sk : list) {
+            if (!arLyginis(sk)) {
+                suma += sk;
+            }
+        }
+        return suma;
+    }
 }
