@@ -9,7 +9,8 @@ import java.util.Scanner;
 public class Uzduotis3 {
     public static void main(String[] args) {
         ArrayList<Integer> skaiciai = nuskaitytiLista();
-
+        int minusSuma = neigiamuSuma(skaiciai);
+        System.out.println("minusSuma = " + minusSuma);
 
     }
 
@@ -36,6 +37,21 @@ public class Uzduotis3 {
      */
     public static boolean arNeigiamas(int x) {
         return x < 0;
+    }
+
+    /**
+     * Suskaičiuoja listo neigiamų skaičių sumą
+     * @param list sąrašass
+     * @return neigiamų suma
+     */
+    public static int neigiamuSuma(ArrayList<Integer> list) {
+        int suma = 0;
+        for (Integer sk : list) {
+            if (arNeigiamas(sk)) {
+                suma += sk;
+            }
+        }
+        return suma;
     }
 
 }
