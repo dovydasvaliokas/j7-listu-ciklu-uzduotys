@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -8,6 +9,8 @@ import java.util.Scanner;
 public class Uzduotis8 {
     public static void main(String[] args) {
         ArrayList<Integer> skaiciai = nuskaitytiLista();
+        int didziausias = maxIndeksas(skaiciai);
+        System.out.println("Didžiausias skaičius yra " + didziausias + "-as skaičius");
 
     }
 
@@ -25,5 +28,16 @@ public class Uzduotis8 {
             list.add(skait.nextInt());
         }
         return list;
+    }
+
+
+    public static int maxIndeksas(List<Integer> list) {
+        int maxInd = 0;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) > list.get(maxInd)) {
+                maxInd = i;
+            }
+        }
+        return maxInd;
     }
 }
