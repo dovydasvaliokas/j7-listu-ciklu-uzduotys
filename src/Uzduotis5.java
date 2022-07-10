@@ -93,4 +93,14 @@ public class Uzduotis5 {
         }
         return suma;
     }
+
+    /**
+     * Palygina kurių skaičių (lyginių ar nelyginių) suma yra didesnsė
+     * @param list sąrašas
+     * @return neigiamą reikšmę, jeigu nelyginių didessnė, 0 jeigu vienoda, teigiamą reikšmę jeigu lyginių didesnė
+     */
+    public static int arLyginiuSumaDidesne(List<Integer> list) {
+        return lyginiuSuma(list) - nelyginiuSuma(list);
+    }
+
 }
