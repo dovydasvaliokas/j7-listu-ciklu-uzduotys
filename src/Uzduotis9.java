@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
 
@@ -8,6 +11,23 @@ Kartais vidurkis nėra pats geriausias kriterijus. Pavyzdžiui, jeigu turime įm
  */
 public class Uzduotis9 {
     public static void main(String[] args) {
+        ArrayList<Double> algos = nuskaitytiLista();
 
+    }
+
+    /**
+     * Nuskaito listą iš konsolės
+     * @return listą
+     */
+    public static ArrayList<Double> nuskaitytiLista() {
+        Scanner skait = new Scanner(System.in);
+        ArrayList<Double> list = new ArrayList<>();
+        System.out.println("Įveskite kiek bus skaičių: ");
+        int n = skait.nextInt();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Įveskite " + i + "-ąjį skaičių:");
+            list.add(skait.nextDouble());
+        }
+        return list;
     }
 }
