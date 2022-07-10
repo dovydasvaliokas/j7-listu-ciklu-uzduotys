@@ -11,6 +11,8 @@ public class Uzduotis3 {
         ArrayList<Integer> skaiciai = nuskaitytiLista();
         int minusSuma = neigiamuSuma(skaiciai);
         System.out.println("minusSuma = " + minusSuma);
+        int pliusSuma = teigiamuSuma(skaiciai);
+        System.out.println("pliusSuma = " + pliusSuma);
 
     }
 
@@ -54,4 +56,18 @@ public class Uzduotis3 {
         return suma;
     }
 
+    /**
+     * Suskaičiuoja listo teigiamų skaičių sumą
+     * @param list sąrašass
+     * @return teigiamų suma
+     */
+    public static int teigiamuSuma(ArrayList<Integer> list) {
+        int suma = 0;
+        for (Integer sk : list) {
+            if (!arNeigiamas(sk)) {
+                suma += sk;
+            }
+        }
+        return suma;
+    }
 }
