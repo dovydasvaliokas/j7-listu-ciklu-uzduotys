@@ -29,4 +29,13 @@ public class Uzduotis5 {
         }
         return list;
     }
+
+    /**
+     * Patikrina ar lyginis
+     * @param x tikrinamas skaičius
+     * @return true, jeigu lyginis, false jeigu ne
+     */
+    public static boolean arLyginis(int x) {
+        return x % 2 == 0;
+    }
 }
