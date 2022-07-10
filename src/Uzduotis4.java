@@ -9,6 +9,8 @@ import java.util.Scanner;
  */
 public class Uzduotis4 {
     public static void main(String[] args) {
+        ArrayList<String> zodziai = nuskaitytiLista();
+
 
     }
 
@@ -42,5 +44,18 @@ public class Uzduotis4 {
             list.add(skait.nextLine());
         }
         return list;
+    }
+
+    /**
+     * Suranda žodžių sąrašo kiekvieno žodžio ilgį
+     * @param zodziai sąrašass
+     * @return skaičių sąrašą, kur nurodyta kiekvieno žodžio ilgiss
+     */
+    public static ArrayList<Integer> rastiZodziuIlgius(ArrayList<String> zodziai) {
+        ArrayList<Integer> ilgiai = new ArrayList<>();
+        for (String s : zodziai) {
+            ilgiai.add(s.length());
+        }
+        return ilgiai;
     }
 }
