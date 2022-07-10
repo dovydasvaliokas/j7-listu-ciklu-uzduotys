@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 1. Susikurkite Java projektą, susikurkite Programa.java failą (class), tame faile susikurkite main funkciją.
 2. Nusikopijuokite funkciją iš 1 užduoties, kuri suranda kiek yra list'e skaičių, didesnių už x.
@@ -7,5 +9,21 @@
 public class Uzduotis4 {
     public static void main(String[] args) {
 
+    }
+
+    /**
+     * Apsskaičiuoja kiek sąraše yra skaičių didesnių už tam tikrą nurodytą skaičių
+     * @param list sąrašas
+     * @param x nurodytas skaičius
+     * @return kiekį, kiek didesnsių už x
+     */
+    public static int kiekDidesniu(ArrayList<Integer> list, int x) {
+        int kiekis = 0;
+        for (Integer sk : list) {
+            if (sk > x) {
+                kiekis++;
+            }
+        }
+        return kiekis;
     }
 }
