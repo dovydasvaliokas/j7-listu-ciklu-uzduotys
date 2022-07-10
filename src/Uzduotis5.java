@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
@@ -38,4 +39,29 @@ public class Uzduotis5 {
     public static boolean arLyginis(int x) {
         return x % 2 == 0;
     }
+
+    /**
+     * Funkcija randa kiek sąraše yra lyginių
+     * @param list sąrašass
+     * @return kiekį
+     */
+    public static int kiekLyginiu(List<Integer> list) {
+        int kiekLyginiu = 0;
+        for (Integer sk : list) {
+            if (arLyginis(sk)) {
+                kiekLyginiu++;
+            }
+        }
+        return kiekLyginiu;
+    }
+
+    /**
+     * Kuriu daugiau ar lyginių ar nelyginių
+     * @param list sąrašass
+     * @return -1 jeigu nelyginių daugiau, 0 jeigu vienodai, 1 jeigu lyginių daugiau
+     */
+    public static int arLyginiuDaugiau(List<Integer> list) {
+        return Integer.compare(kiekLyginiu(list), list.size() - kiekLyginiu(list));
+    }
+
 }
