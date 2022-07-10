@@ -20,7 +20,7 @@ public class Uzduotis6 {
     public static ArrayList<Boolean> nuskaitytiLista() {
         Scanner skait = new Scanner(System.in);
         ArrayList<Boolean> list = new ArrayList<>();
-        System.out.println("Įveskite kiek bus loginių kintamųjų (true/false) arba (1/0): ");
+        System.out.println("Įveskite kiek bus loginių kintamųjų (true/false): ");
         int n = skait.nextInt();
         for (int i = 0; i < n; i++) {
             System.out.println("Įveskite " + i + "-ąjį loginį kintamąjį:");
