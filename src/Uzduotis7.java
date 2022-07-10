@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /*
@@ -9,7 +10,22 @@ public class Uzduotis7 {
     public static void main(String[] args) {
         Scanner skait = new Scanner(System.in);
         int sk = skait.nextInt();
+        ArrayList<Integer> skaitmenys = isskaidytiISkaitmenis(sk);
+        System.out.println("skaitmenys = " + skaitmenys);
     }
 
-
+    /**
+     * Išskaido skaičių į skaitmenis
+     * @param x skaičius
+     * @return sąrašas skaitmenų
+     */
+    public static ArrayList<Integer> isskaidytiISkaitmenis(int x) {
+        ArrayList<Integer> skaitmenys = new ArrayList<>();
+        while (x > 0) {
+            skaitmenys.add(x % 10);
+            x /= 10;
+        }
+        Collections.reverse(skaitmenys);
+        return skaitmenys;
+    }
 }
