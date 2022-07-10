@@ -39,6 +39,7 @@ public class Uzduotis4 {
         ArrayList<String> list = new ArrayList<>();
         System.out.println("Įveskite kiek bus žodžių: ");
         int n = skait.nextInt();
+        skait.nextLine();
         for (int i = 0; i < n; i++) {
             System.out.println("Įveskite " + i + "-ąjį žodį:");
             list.add(skait.nextLine());
