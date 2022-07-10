@@ -29,6 +29,13 @@ public class Uzduotis3 {
         return list;
     }
 
-
+    /**
+     * Patikrina ar skaičius neigiamas
+     * @param x tikrinamas skaičius
+     * @return true, jeigu neigiamas, false jeigu teigiamas
+     */
+    public static boolean arNeigiamas(int x) {
+        return x < 0;
+    }
 
 }
