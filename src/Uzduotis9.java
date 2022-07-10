@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /*
@@ -12,6 +13,10 @@ Kartais vidurkis nėra pats geriausias kriterijus. Pavyzdžiui, jeigu turime įm
 public class Uzduotis9 {
     public static void main(String[] args) {
         ArrayList<Double> algos = nuskaitytiLista();
+        Collections.sort(algos);
+        System.out.println("algos = " + algos);
+        double alguMediana = mediana(algos);
+        System.out.println("alguMediana = " + alguMediana);
 
     }
 
@@ -29,5 +34,29 @@ public class Uzduotis9 {
             list.add(skait.nextDouble());
         }
         return list;
+    }
+
+    /**
+     * Patikrina ar lyginis
+     * @param x tikrinamas skaičius
+     * @return true, jeigu lyginis, false jeigu ne
+     */
+    public static boolean arLyginis(int x) {
+        return x % 2 == 0;
+    }
+
+    /**
+     * Apskaičiuoja SURIKIUOTO sąrašo medianą
+     * @param surikiuotasList SURIKIUOTAS sąrašass
+     * @return medianą
+     */
+    public static double mediana(ArrayList<Double> surikiuotasList) {
+        int vidurinioIndeksas = surikiuotasList.size() / 2;
+        if (arLyginis(surikiuotasList.size())) {
+            return (surikiuotasList.get(vidurinioIndeksas) + surikiuotasList.get(vidurinioIndeksas - 1)) / 2;
+        }
+        else {
+            return surikiuotasList.get(vidurinioIndeksas);
+        }
     }
 }
