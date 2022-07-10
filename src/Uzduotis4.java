@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class Uzduotis4 {
     public static void main(String[] args) {
         ArrayList<String> zodziai = nuskaitytiLista();
-
-
+        int kiekIlgesniuZodziu = kiekDidesniu(rastiZodziuIlgius(zodziai), 9);
+        System.out.println("kiekIlgesniuZodziu = " + kiekIlgesniuZodziu);
     }
 
     /**
