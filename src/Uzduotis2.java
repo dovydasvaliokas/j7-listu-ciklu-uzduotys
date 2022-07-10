@@ -8,7 +8,12 @@ import java.util.Scanner;
  */
 public class Uzduotis2 {
     public static void main(String[] args) {
+        ArrayList<Double> skaiciai = nuskaitytiLista();
+        int kiekDidesniuUzTrecia = kiekDidesniuUzKazkelinta(skaiciai, 3);
+        int kiekDidesniuUzNulini = kiekDidesniuUzKazkelinta(skaiciai, 0);
 
+        System.out.println("kiekDidesniuUzTrecia = " + kiekDidesniuUzTrecia);
+        System.out.println("kiekDidesniuUzNulini = " + kiekDidesniuUzNulini);
     }
 
     /**
@@ -25,5 +30,21 @@ public class Uzduotis2 {
             list.add(skait.nextDouble());
         }
         return list;
+    }
+
+    /**
+     * Suskaičiuoja kiek sąraše yra elementų didesnių už n-ąjį elementą.
+     * @param list sąrašass
+     * @param kelintas su kelintu elementu lyginam arba tiesiog n
+     * @return kiek didesnių
+     */
+    public static int kiekDidesniuUzKazkelinta(ArrayList<Double> list, int kelintas) {
+        int kiekis = 0;
+        for (Double sk : list) {
+            if (sk > list.get(kelintas)) {
+                kiekis++;
+            }
+        }
+        return kiekis;
     }
 }
